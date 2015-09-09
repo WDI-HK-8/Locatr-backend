@@ -5,8 +5,8 @@ class CreateInvitations < ActiveRecord::Migration
     	t.belongs_to :group
     	t.integer :user_sent_by_id
     	t.string :text
-    	t.boolean :accepted
-    	t.boolean :rejected
+    	t.boolean :accepted, :null => false, :default => false
+    	t.boolean :rejected, :null => false, :default => false
       t.timestamps null: false
     end
   end

@@ -24,6 +24,14 @@ class GroupsController < ApplicationController
 		return @groups
 	end
 
+	def show
+    @group = Group.find_by_id(params[:id])
+
+    if @group.nil?
+      render json: { message: "Cannot find item" }, status: :not_found
+    end
+  end
+
 	private 
 
 	def group_params

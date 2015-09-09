@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 20150908110341) do
     t.integer  "group_id"
     t.integer  "user_sent_by_id"
     t.string   "text"
-    t.boolean  "accepted"
-    t.boolean  "rejected"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "accepted",        default: false, null: false
+    t.boolean  "rejected",        default: false, null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "users", force: :cascade do |t|

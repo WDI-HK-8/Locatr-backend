@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   end
 
   get '/users/:user_id/group_users' => 'groups#user_groups'
+  post '/users/:user_id/groups/:group_id/invitation/:invited_phone_number' => 'invitations#new_invitation'
+  get '/users/:user_id/received' => 'invitations#invitations_received'
+  get '/users/:user_id/sent' => 'invitations#invitations_sent'
+  put '/invitation/:id' => 'invitations#accept_invitation'
 
 end
