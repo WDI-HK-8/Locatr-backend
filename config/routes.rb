@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resources :invitations
   end
 
-
+  get '/users/:user_id/group_users' => 'groups#user_groups'
 
 end
