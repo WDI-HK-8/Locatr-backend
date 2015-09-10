@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get '/users/:user_id/received' => 'invitations#invitations_received'
   get '/users/:user_id/sent' => 'invitations#invitations_sent'
   put '/invitation/:id' => 'invitations#accept_invitation'
+  delete '/groups/:group_id/to_delete/:user_id' => 'group_users#remove'
 
 end
