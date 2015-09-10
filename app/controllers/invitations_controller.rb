@@ -1,7 +1,7 @@
 class InvitationsController < ApplicationController
 	def new_invitation	
 		@id = User.where(phone_number: params[:invited_phone_number]).first.id
-		@invitation = Invitation.new(invitation_params.merge(user_id: @id,user_sent_by_id: params[:user_id], group_id: params[:group_id]))
+		@invitation = Invitation.new(invitation_params.merge(user_id: @id,user_sent_by_id: params[:user_id], group_id: params[:group_id], accepted: false, rejected: false))
 
 		if @invitation.save
       # render success in Jbuilder
@@ -30,7 +30,7 @@ class InvitationsController < ApplicationController
 
 	private
 	def invitation_params
-		params.require(:invitation).permit(:text)
+		params.require(:invitation).permit(:text, :accepted, :rejected)
 	end
 
 	def invitation_accept_or_reject_params
