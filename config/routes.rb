@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   put '/invitation/:id' => 'invitations#accept_invitation'
   delete '/groups/:group_id/to_delete/:user_id' => 'group_users#remove'
   put '/coordinates/:id' => 'users#update_coordinates'
+  get '/group/:group_id/other_users/:id' => 'users#other_users'
 
 end
