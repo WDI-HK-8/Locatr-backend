@@ -5,4 +5,6 @@ json.array! @group_users do |group_user|
 	json.name group_user.user.name
 	json.phone_number group_user.user.phone_number
 	json.email group_user.user.email
+	json.latitude group_user.user.latitude
+	json.longitude group_user.user.longitude
 end
