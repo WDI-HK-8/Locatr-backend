@@ -7,4 +7,5 @@ json.array! @group_users do |group_user|
 	json.email group_user.user.email
 	json.latitude group_user.user.latitude
 	json.longitude group_user.user.longitude
+	json.icon 'http://labs.google.com/ridefinder/images/mm_20_blue.png'
 end
