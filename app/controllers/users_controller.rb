@@ -25,6 +25,6 @@ class UsersController < ApplicationController
 	end
 
 	def settings_params
-		params.require(:user).permit(:image, :accept_invites, :silent)
+		params.require(:user).permit(:accept_invites, :silent)
 	end
 end
