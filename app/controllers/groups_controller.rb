@@ -20,8 +20,6 @@ class GroupsController < ApplicationController
 		@group_users.each do |group_user|
 			@groups << group_user.group
 		end
-
-		return @groups
 	end
 
 	def show

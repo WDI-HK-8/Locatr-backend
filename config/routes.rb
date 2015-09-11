@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   delete '/groups/:group_id/to_delete/:user_id' => 'group_users#remove'
   put '/coordinates/:id' => 'users#update_coordinates'
   get '/group/:group_id/other_users/:id' => 'group_users#other_users'
+  put '/settings/:id' => 'users#update_settings'
 
 end

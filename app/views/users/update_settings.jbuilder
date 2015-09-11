@@ -6,4 +6,3 @@ json.longitude @user.longitude
 json.phone_number @user.phone_number
 json.accept_invites @user.accept_invites
 json.silent @user.silent
-json.image @user.image
