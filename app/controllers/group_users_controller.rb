@@ -11,7 +11,15 @@ class GroupUsersController < ApplicationController
   end
 
   def other_users
-    @group_users = GroupUser.where(group_id: params[:group_id], silent: false).where.not(user_id: params[:id])
+    @group_users_first = GroupUser.where(group_id: params[:group_id]).where.not(user_id: params[:id])
+    @group_users = []
+    @group_users_first.each do |group_user|
+      if group_user.user.silent != true
+        @group_users << group_user
+      end
+    end
+
+    return @group_users
   end
 
   def remove
