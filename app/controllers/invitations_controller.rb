@@ -11,7 +11,7 @@ class InvitationsController < ApplicationController
 	end
 
 	def invitations_sent
-		@invitations = Invitation.where(user_sent_by_id: params[:user_id])
+		@invitations = Invitation.where(user_sent_by_id: params[:user_id], group_id: params[:group_id], accepted: false, rejected: false)
 	end
 
 	def invitations_received
